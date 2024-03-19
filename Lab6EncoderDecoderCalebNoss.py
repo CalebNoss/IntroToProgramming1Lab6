@@ -23,3 +23,5 @@ if __name__ == '__main__':
             encoded_password = encode()
         elif choice == "2":
             print(encoded_password)
+        elif choice == "3":
+            exit()
