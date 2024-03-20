@@ -15,6 +15,16 @@ def encode():
         a=1
 
 
+def decode(password):
+    res = ''
+    for char in password:
+        if int(char) == 0 or int(char) == 1 or int(char) == 2:
+            res += str(int(char) + 7)
+        else:
+            res += str(int(char) - 3)
+    return res
+
+
 if __name__ == '__main__':
     while True:
         print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
@@ -22,6 +32,7 @@ if __name__ == '__main__':
         if choice == "1":
             encoded_password = encode()
         elif choice == "2":
-            print(encoded_password)
+            print(f'The encoded password is {encoded_password}, '
+                  f'and the original password is {decode(encoded_password)}.')
         elif choice == "3":
             exit()
